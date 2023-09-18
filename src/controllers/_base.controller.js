@@ -1,5 +1,5 @@
 class BaseController {
-    constructor(servClass){
+    constructor(servClass) {
         this.serv = new servClass();
     }
     // DB Operations
@@ -8,6 +8,7 @@ class BaseController {
             const response = await this.serv.findAll();
             return res.json(response);
         } catch (error) {
+            console.log(error);
             res.status(400).json({
                 error: error
             })
@@ -23,6 +24,7 @@ class BaseController {
             }
             return res.json(find);
         } catch (error) {
+            console.log(error);
             res.status(400).json({
                 error: error
             })
@@ -35,6 +37,7 @@ class BaseController {
             await this.serv.create(body);
             res.status(201).json({ body, msg: 'Created' });
         } catch (error) {
+            console.log(error);
             res.status(400).json({
                 error: error
             })
@@ -51,6 +54,7 @@ class BaseController {
             }
             res.status(200).json({ updated, body, msg: "Success!" });
         } catch (error) {
+            console.log(error);
             res.status(400).json({
                 error: error
             })
@@ -66,6 +70,7 @@ class BaseController {
             }
             res.status(200).json({ deleted, msg: "Deleted"});
         } catch (error) {
+            console.log(error);
             res.status(400).json({
                 error: error
             })
