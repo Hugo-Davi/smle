@@ -1,4 +1,4 @@
-const DeckRepository = require('../repositories/deck.repository');
+const DeckRepository = require('../services/deck.service');
 const BaseController = require('./_base.controller');
 
 class DeckController extends BaseController{

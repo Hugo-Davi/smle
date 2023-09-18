@@ -1,8 +1,8 @@
-const BaseRepository = require('./_base.repository');
+const BaseService = require('./_base.service');
 const user = require('../models/user.model')
 
 
-class UserRepository extends BaseRepository {
+class UserService extends BaseService {
     constructor(){
         super(user);
     }
@@ -10,4 +10,4 @@ class UserRepository extends BaseRepository {
         return this.collection.findOne({username: username});
     }
 }
-module.exports = UserRepository;
+module.exports = UserService;

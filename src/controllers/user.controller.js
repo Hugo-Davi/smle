@@ -1,4 +1,4 @@
-const UserRepository = require('../repositories/user.repository');
+const UserRepository = require('../services/user.service');
 const BaseController = require('./_base.controller');
 
 const bcrypt = require('bcrypt')

@@ -10,8 +10,8 @@ const usercardSchema = new Schema({
     last5Rates: {
         type: [{ type: Number }],
         validate: [ (val) => { return val.length <= 5 }, 'Array limmit is 5' ]
-    }
-    // user: { type: objectId, ref: 'user' }
+    },
+    user: { type: objectId, ref: 'users', require: true }
 });
 
 const usercard = mongoose.model('usercards', usercardSchema);

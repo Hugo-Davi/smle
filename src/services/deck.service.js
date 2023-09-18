@@ -1,10 +1,10 @@
-const BaseRepository = require('./_base.repository');
+const BaseService = require('./_base.service');
 const deck = require('../models/deck.model');
 
 const card = require('../models/card.model');
 const usercard = require('../models/usercard.model');
 
-class DeckRepository extends BaseRepository {
+class DeckService extends BaseService {
     constructor(){
         super(deck);
     }
@@ -12,4 +12,4 @@ class DeckRepository extends BaseRepository {
         return await deck.findById(id).populate('cards').lean().exec();
     }
 }
-module.exports = DeckRepository;
+module.exports = DeckService;

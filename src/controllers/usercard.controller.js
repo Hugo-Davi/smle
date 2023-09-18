@@ -1,4 +1,4 @@
-const UserCardRepository = require('../repositories/usercard.repository');
+const UserCardRepository = require('../services/usercard.service');
 const BaseController = require('./_base.controller');
 
 class UserCardController extends BaseController{

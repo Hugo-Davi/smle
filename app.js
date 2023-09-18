@@ -8,9 +8,11 @@ const port = process.env.PORT || 3000;
 
 // to extract the data from the request body
 app.use(express.json());
+
 // Routes
 const routes = require('./src/routes/api.routes');
 app.use('/api', routes);
+
 
 // Database connection
 const connect = require('./src/config/db');
