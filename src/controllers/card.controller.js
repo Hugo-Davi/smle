@@ -1,9 +1,9 @@
-const CardRepository = require('../services/card.service');
+const CardService = require('../services/card.service');
 const BaseController = require('./_base.controller');
 
 class CardController extends BaseController{
     constructor(){
-        super(CardRepository);
+        super(CardService);
     }
 }
 

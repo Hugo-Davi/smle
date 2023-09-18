@@ -1,11 +1,11 @@
 class BaseController {
-    constructor(repoClass){
-        this.repo = new repoClass();
+    constructor(servClass){
+        this.serv = new servClass();
     }
     // DB Operations
     getAll = async (req, res) => {
         try {
-            const response = await this.repo.findAll();
+            const response = await this.serv.findAll();
             return res.json(response);
         } catch (error) {
             res.status(400).json({
@@ -16,7 +16,7 @@ class BaseController {
     get = async (req, res) => {
         try {
             const id = req.params.id;
-            const find = await this.repo.findById(id);
+            const find = await this.serv.findById(id);
             if(!find){
                 res.status(404).json({ msg: "Not found" });
                 return;
@@ -32,7 +32,7 @@ class BaseController {
         try {
             const body = req.body;
             console.log(body);
-            await this.repo.create(body);
+            await this.serv.create(body);
             res.status(201).json({ body, msg: 'Created' });
         } catch (error) {
             res.status(400).json({
@@ -44,7 +44,7 @@ class BaseController {
         try {
             const id = req.params.id;
             const body = req.body;
-            const updated = await this.repo.update(id, body);
+            const updated = await this.serv.update(id, body);
             if(!updated){
                 res.status(404).json({ msg: "Not found" });
                 return;
@@ -59,7 +59,7 @@ class BaseController {
     delete = async (req, res) => {
         try {
             const id = req.params.id;
-            const deleted = await this.repo.delete(id);
+            const deleted = await this.serv.delete(id);
             if(!deleted){
                 res.status(404).json({ msg: "Not found" });
                 return;
