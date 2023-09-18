@@ -17,6 +17,7 @@ class AuthController extends BaseController{
             await this.serv.create(body);
             res.status(201).json({ body, msg: 'Created' });
         } catch (error) {
+            console.log(error);
             res.status(400).json({
                 error: error.message
             })
@@ -30,19 +31,19 @@ class AuthController extends BaseController{
             const username = req.body.username;
             const user = await this.serv.findByUsername(username);
 
-            await bcrypt.compare(body.password, user.password, (error, response) => {
-                if(error){
-                    return res.status(400).json({error: error})
-                }
-                if(response){
-                    console.log('Login sucesso');
-                    return res.status(201).json({message: 'Logged', user: user});
-                }
-                else{
-                    return res.json({success: false, message: 'passwords do not match'});
-                }
-            })
+            const passwordIsValid = await bcrypt.compare(body.password, user.password);
+
+            if(!passwordIsValid){
+                return res.json({success: false, message: 'passwords do not match'});
+            }
+
+            // JWT
+            const token = this.serv.generateToken(user.id);
+
+            return res.status(201).send({token});
+
         } catch (error) {
+            console.log(error);
             res.status(400).json({
                 error: error.message
             })

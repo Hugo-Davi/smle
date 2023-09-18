@@ -10,4 +10,4 @@ router.post('/', cardController.create);
 router.put('/id=:id', cardController.update);
 router.delete('/id=:id', cardController.delete);
 
-module.exports = router
+module.exports = router;

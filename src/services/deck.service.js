@@ -2,7 +2,6 @@ const BaseService = require('./_base.service');
 const deck = require('../models/deck.model');
 
 const card = require('../models/card.model');
-const usercard = require('../models/usercard.model');
 
 class DeckService extends BaseService {
     constructor(){
