@@ -40,7 +40,7 @@ class AuthController extends BaseController{
             // JWT
             const token = this.serv.generateToken(user.id);
 
-            return res.status(201).send({token});
+            res.status(201).send({token});
 
         } catch (error) {
             console.log(error);

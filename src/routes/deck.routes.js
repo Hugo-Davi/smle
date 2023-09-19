@@ -10,6 +10,6 @@ router.post('/', deckController.create);
 router.put('/id=:id', deckController.update);
 router.delete('/id=:id', deckController.delete);
 
-router.get('/cards/id=:id', deckController.getAllCards);
+router.put('/card/id=:id', deckController.addCard);
 
 module.exports = router

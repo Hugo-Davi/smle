@@ -5,6 +5,7 @@ class UserController extends BaseController{
     constructor(){
         super(UserService);
     }
+
 }
 
 module.exports = UserController;

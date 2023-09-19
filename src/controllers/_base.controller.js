@@ -33,7 +33,6 @@ class BaseController {
     create = async (req, res) => {
         try {
             const body = req.body;
-            console.log(body);
             await this.serv.create(body);
             res.status(201).json({ body, msg: 'Created' });
         } catch (error) {
