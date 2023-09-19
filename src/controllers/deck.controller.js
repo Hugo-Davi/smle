@@ -6,6 +6,21 @@ class DeckController extends BaseController{
         super(DeckService);
     }
 
+    create = async (req, res) => {
+        try {
+            const body = req.body;
+            body.owner = req.userId;
+            await this.serv.create(body);
+            res.status(201).json({ body, msg: 'Created' });
+        } catch (error) {
+            console.log(error);
+            res.status(400).json({
+                error
+            })
+        }
+    }
+
+
     addCard = async (req, res) => {
         try {
             const id = req.params.id;

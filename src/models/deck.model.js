@@ -6,7 +6,7 @@ const objectId = mongoose.Schema.Types.ObjectId;
 const deckSchema = new Schema({
     _id: { type: objectId, auto: true },
     name: { type: String, required: [ true, 'require a name' ] },
-    owner: { type: objectId, ref: 'users' },
+    owner: { type: objectId, ref: 'users', require: true },
     // cards: [ { type: objectId, ref: 'cards' } ]
     types: [ { type: String } ],
     cards: [{
