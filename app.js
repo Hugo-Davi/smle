@@ -13,11 +13,10 @@ app.use(express.json());
 const routes = require('./src/routes/api.routes');
 app.use('/api', routes);
 
-
 // Database connection
 const connect = require('./src/config/db');
 connect();
 
 app.listen(port, () => {
-    console.log(`Servidor iniciado em http://localhost:${port}`);
+    console.log(`Server running at http://localhost:${port}`);
 });

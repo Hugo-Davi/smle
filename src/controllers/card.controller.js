@@ -1,7 +1,7 @@
 const CardService = require('../services/card.service');
-const BaseController = require('./_base.controller');
+const Controller = require('./_base.controller');
 
-class CardController extends BaseController{
+class CardController extends Controller{
     constructor(){
         super(CardService);
     }

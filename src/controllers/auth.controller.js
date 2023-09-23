@@ -1,9 +1,9 @@
 const AuthService = require('../services/auth.service');
-const BaseController = require("./_base.controller");
+const Controller = require("./_base.controller");
 
 const bcrypt = require('bcrypt');
 
-class AuthController extends BaseController{
+class AuthController extends Controller{
     constructor(){
         super(AuthService);
     }

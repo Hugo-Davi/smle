@@ -1,7 +1,7 @@
-const BaseService = require('./_base.service');
+const Service = require('./_base.service');
 const card = require('../models/card.model')
 
-class CardService extends BaseService {
+class CardService extends Service {
     constructor(){
         super(card);
     }

@@ -1,10 +1,10 @@
 const user = require('../models/user.model');
-const BaseService = require('./_base.service');
+const Service = require('./_base.service');
 const UserService = require('./user.service');
 
 const jwt = require('jsonwebtoken')
 
-class AuthService extends BaseService{
+class AuthService extends Service{
     constructor(){
         super(user);
     }

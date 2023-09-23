@@ -1,4 +1,4 @@
-class BaseService {
+class Service {
     constructor(collectionModel) {
         this.collection = collectionModel
     }
@@ -23,4 +23,4 @@ class BaseService {
     //     return String(id).replace(pattern, '');
     // }
 }
-module.exports = BaseService;
+module.exports = Service;

@@ -5,7 +5,7 @@ async function main(){
 
     try {
         await mongoose.connect(mongodb_url);
-        console.log('MongoDB conectado com sucesso!');
+        console.log('MongoDB is ready!');
     } catch (error) {
         console.log(`Error: ${error}`);
     }

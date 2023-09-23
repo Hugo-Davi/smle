@@ -1,4 +1,4 @@
-class BaseController {
+class Controller {
     constructor(servClass) {
         this.serv = new servClass();
     }
@@ -77,4 +77,4 @@ class BaseController {
     }
 }
 
-module.exports = BaseController;
+module.exports = Controller;

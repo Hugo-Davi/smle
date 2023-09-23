@@ -1,7 +1,7 @@
 const DeckService = require('../services/deck.service');
-const BaseController = require('./_base.controller');
+const Controller = require('./_base.controller');
 
-class DeckController extends BaseController{
+class DeckController extends Controller{
     constructor(){
         super(DeckService);
     }
@@ -19,7 +19,6 @@ class DeckController extends BaseController{
             })
         }
     }
-
 
     addCard = async (req, res) => {
         try {
