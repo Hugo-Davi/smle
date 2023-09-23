@@ -11,6 +11,9 @@ class Service {
     create(model) {
         return this.collection.create(model);
     }
+    createMany(array) {
+        return this.collection.insertMany(array);
+    }
     update(id, model) {
         return this.collection.findByIdAndUpdate(id, model);
     }

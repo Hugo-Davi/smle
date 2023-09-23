@@ -42,6 +42,18 @@ class Controller {
             })
         }
     }
+    createMany = async (req, res) => {
+        try {
+            const body = req.body;
+            await this.serv.createMany(body);
+            res.status(201).json({ body, msg: 'Created' });
+        } catch (error) {
+            console.log(error);
+            res.status(400).json({
+                error: error
+            })
+        }
+    }
     update = async (req, res) => {
         try {
             const id = req.params.id;

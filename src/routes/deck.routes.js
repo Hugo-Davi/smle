@@ -8,7 +8,7 @@ const authMiddleware = require('../middleware/auth.middleware');
 
 router.get('/', deckController.getAll);
 router.get('/id=:id', deckController.get);
-router.post('/', authMiddleware, deckController.create);
+router.post('/', deckController.create);
 router.put('/id=:id', authMiddleware, deckController.update);
 router.delete('/id=:id', authMiddleware, deckController.delete);
 

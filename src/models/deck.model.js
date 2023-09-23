@@ -7,8 +7,9 @@ const deckSchema = new Schema({
     _id: { type: objectId, auto: true },
     name: { type: String, required: [ true, 'require a name' ] },
     owner: { type: objectId, ref: 'users', require: true },
-    // cards: [ { type: objectId, ref: 'cards' } ]
-    types: [ { type: String } ],
+    text: { type: String },
+    type: { type: String },
+    // types: [ { type: String } ],
     cards: [{
         front: { type: String, required: true },
         back: { type: String, required: true },
