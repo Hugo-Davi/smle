@@ -10,6 +10,7 @@ class DeckController extends Controller{
         try {
             const deck = await this.serv.findById(req.params.id);
             const cards = deck.cards.filter((element) => Date.parse(element.nextReview) < Date.now());
+            console.log(cards)
             res.status(200).json({cards});
         } catch (error) {
             console.log(error);

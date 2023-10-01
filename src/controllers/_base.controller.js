@@ -22,7 +22,7 @@ class Controller {
                 res.status(404).json({ msg: "Not found" });
                 return;
             }
-            return res.json(find);
+            return res.json({body: find});
         } catch (error) {
             console.log(error);
             res.status(400).json({
