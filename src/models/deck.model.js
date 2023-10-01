@@ -13,7 +13,7 @@ const deckSchema = new Schema({
     cards: [{
         front: { type: String, required: true },
         back: { type: String, required: true },
-        nextReview: { type: Date },
+        nextReview: { type: Date, default: Date.now() },
         last5rates: [{ type: Number }]
     }]
 });

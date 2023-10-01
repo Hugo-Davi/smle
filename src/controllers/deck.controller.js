@@ -6,6 +6,19 @@ class DeckController extends Controller{
         super(DeckService);
     }
 
+    getReview = async (req, res) => {
+        try {
+            const deck = await this.serv.findById(req.params.id);
+            const cards = deck.cards.filter((element) => Date.parse(element.nextReview) < Date.now());
+            res.status(200).json({cards});
+        } catch (error) {
+            console.log(error);
+            res.status(400).json({
+                error
+            })
+        }
+    }
+
     create = async (req, res) => {
         try {
             const body = req.body;

@@ -12,6 +12,7 @@ router.post('/', deckController.create);
 router.put('/id=:id', authMiddleware, deckController.update);
 router.delete('/id=:id', authMiddleware, deckController.delete);
 
+router.get('/review/id=:id', deckController.getReview);
 router.put('/card/id=:id', deckController.addCard);
 
 module.exports = router
