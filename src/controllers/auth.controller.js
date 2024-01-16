@@ -14,7 +14,9 @@ class AuthController extends Controller{
                     username: req.body.username,
                     password: await bcrypt.hash(req.body.password, 10)
                 };
+
             await this.serv.create(body);
+
             res.status(201).json({ body, msg: 'Created' });
         } catch (error) {
             console.log(error);
